@@ -16,7 +16,7 @@ public class DBConnect {
 		try {
 			Class.forName(jdbc_driver);
 			// �����ͺ��̽� ���������� �̿��� Connection �ν��Ͻ� Ȯ��
-			conn = DriverManager.getConnection(jdbc_url, "kitri04", "kitri04");
+			 conn = DriverManager.getConnection(jdbc_url, "kitri04", "kitri04");			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -33,6 +33,8 @@ public class DBConnect {
 		if(conn != null){
 			try {
 				conn.close();
+				System.out.println("커넥션 클로즈 널인가?"+conn);
+				conn = DriverManager.getConnection(jdbc_url, "kitri04", "kitri04");
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
